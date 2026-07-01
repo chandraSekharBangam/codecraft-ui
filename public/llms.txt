@@ -1,0 +1,27 @@
+# CodeCraft UI
+
+CodeCraft UI is a production-focused frontend website and component system for React, Next.js, TypeScript, and Tailwind CSS.
+
+Canonical site: https://codecraft-ui.vercel.app
+
+Important routes:
+- /: Overview of the CodeCraft UI redesign and migration offering.
+- /hero: Migrated hero-section component library with live previews and code examples.
+- /about: Company story, values, and migration timeline.
+- /pricing: Project engagement shapes and scope notes.
+- /cta: Conversion CTA patterns and examples.
+- /faqs: Questions about the migration, architecture, SEO, and contact flow.
+- /contact: Contact form and direct email/social links.
+
+Primary contact:
+- Email: chandrasekharbangam@gmail.com
+- GitHub: https://github.com/chandraSekharBangam
+- LinkedIn: https://www.linkedin.com/in/chandra-sekhar-b-62a0a7316
+
+Technology stack:
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+- Metadata routes
+- JSON-LD structured data
