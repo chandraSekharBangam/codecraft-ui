@@ -16,7 +16,7 @@ export function LogoCloud({ title, items }: LogoCloudProps) {
         )}
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-16 lg:gap-x-24">
           {items.map((item, index) => (
-            <div key={index} className="text-xl font-bold tracking-tight text-ink-300 sm:text-2xl select-none">
+            <div key={index} className="select-none text-xl font-bold text-ink-300 sm:text-2xl">
               {item}
             </div>
           ))}

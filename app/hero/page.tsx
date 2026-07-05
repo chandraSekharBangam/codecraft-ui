@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
 export default function HeroLibraryPage() {
   return (
     <>
-      <JsonLd data={[collectionSchema(), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Components', path: '/hero' }])]} />
+      <JsonLd data={[collectionSchema(), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Hero sections', path: '/hero' }])]} />
       <LibraryHero />
       <TechnologyStrip />
       <ComponentShowcase />

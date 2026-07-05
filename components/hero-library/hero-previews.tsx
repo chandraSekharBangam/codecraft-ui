@@ -35,8 +35,8 @@ function SaasPreview() {
             <ButtonLink href="/contact" size="sm" variant="secondary">
               Start a project
             </ButtonLink>
-            <ButtonLink className="border-white/20 bg-transparent text-white hover:bg-white/10" href="/pricing" size="sm" variant="outline">
-              View pricing
+            <ButtonLink className="border-white/20 bg-transparent text-white hover:bg-white/10" href="/contact" size="sm" variant="outline">
+              Discuss scope
             </ButtonLink>
           </div>
         </div>

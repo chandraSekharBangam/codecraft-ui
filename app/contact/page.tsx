@@ -8,7 +8,7 @@ import { breadcrumbSchema, contactSchema } from '@/lib/schema';
 export const metadata: Metadata = buildMetadata({
   title: 'Contact',
   description:
-    'Contact CodeCraft UI for Next.js migration, React component system design, Tailwind CSS redesign, frontend QA, and production website work.',
+    'Send CodeCraft UI your project requirements for custom website development, SaaS applications, dashboards, ecommerce sites, Next.js migration, or production frontend work.',
   path: '/contact',
 });
 

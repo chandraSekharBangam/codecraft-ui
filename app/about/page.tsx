@@ -26,7 +26,7 @@ export default function AboutPage() {
         eyebrow="Company"
         primaryHref="/contact"
         primaryLabel="Work together"
-        secondaryHref="/hero"
+        secondaryHref="/components"
         secondaryLabel="View components"
         title="Design discipline, frontend clarity, and production focus."
       />

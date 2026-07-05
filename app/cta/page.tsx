@@ -21,7 +21,7 @@ export default function CtaPage() {
         primaryHref="/contact"
         primaryLabel="Plan a CTA"
         secondaryHref="/pricing"
-        secondaryLabel="View pricing"
+        secondaryLabel="View scope"
         title="Calls to action that guide, reassure, and convert."
       />
       <CtaPatterns />

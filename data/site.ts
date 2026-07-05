@@ -7,7 +7,7 @@ export const siteConfig = {
   shortName: 'CodeCraft UI',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl,
   description:
-    'CodeCraft UI designs and ships premium React, Next.js, TypeScript, and Tailwind CSS interface systems for teams that want production-ready frontends.',
+    'CodeCraft UI helps teams hire Chandra Sekhar Bangam for custom website development while offering free Next.js, TypeScript, and Tailwind CSS UI components.',
   email: 'chandrasekharbangam@gmail.com',
   github: 'https://github.com/chandraSekharBangam',
   linkedin: 'https://www.linkedin.com/in/chandra-sekhar-b-62a0a7316',
@@ -19,15 +19,19 @@ export const siteConfig = {
     'Tailwind CSS templates',
     'TypeScript frontend',
     'SaaS website design',
+    'custom website development',
+    'responsive website development',
+    'business website design',
+    'startup website development',
     'frontend development',
   ],
 } as const;
 
 export const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'Components', href: '/hero' },
+  { label: 'Components', href: '/components' },
   { label: 'About', href: '/about' },
-  { label: 'Pricing', href: '/pricing' },
+  { label: 'Scope', href: '/pricing' },
   { label: 'CTA', href: '/cta' },
   { label: 'FAQs', href: '/faqs' },
   { label: 'Contact', href: '/contact' },
@@ -37,8 +41,9 @@ export const footerGroups: FooterGroup[] = [
   {
     title: 'Explore',
     links: [
-      { label: 'Components', href: '/hero' },
-      { label: 'Pricing', href: '/pricing' },
+      { label: 'Components', href: '/components' },
+      { label: 'Hero examples', href: '/hero' },
+      { label: 'Project scope', href: '/pricing' },
       { label: 'Conversion CTA', href: '/cta' },
       { label: 'FAQs', href: '/faqs' },
     ],

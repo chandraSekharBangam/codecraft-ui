@@ -32,7 +32,7 @@ export default function OpenGraphImage() {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ color: '#ffc946', fontSize: 30, fontWeight: 700 }}>CodeCraft UI</div>
           <div style={{ marginTop: 18, maxWidth: 880, fontSize: 76, lineHeight: 1.02, fontWeight: 800 }}>
-            Premium Next.js interface systems
+            Custom websites and free UI components
           </div>
           <div style={{ marginTop: 28, maxWidth: 860, color: '#c7cfda', fontSize: 30, lineHeight: 1.35 }}>
             {siteConfig.description}

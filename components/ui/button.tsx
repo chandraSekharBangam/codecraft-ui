@@ -54,7 +54,7 @@ export function Button({
       {...props}
     >
       {loading ? <LoaderCircle aria-hidden="true" className="size-4 animate-spin" /> : null}
-      <span>{children}</span>
+      <span className="inline-flex items-center justify-center gap-2">{children}</span>
     </button>
   );
 }

@@ -59,8 +59,8 @@ export function CtaExamples() {
                   </p>
                 </div>
               </div>
-              <ButtonLink href="/pricing" variant="primary">
-                Compare options
+              <ButtonLink href="/contact" variant="primary">
+                Discuss readiness
               </ButtonLink>
             </div>
           </article>

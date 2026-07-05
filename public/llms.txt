@@ -6,9 +6,10 @@ Canonical site: https://codecraft-ui.vercel.app
 
 Important routes:
 - /: Overview of the CodeCraft UI redesign and migration offering.
-- /hero: Migrated hero-section component library with live previews and code examples.
+- /components: Free UI component library with category browsing, variant previews, fullscreen viewing, highlighted code, and copy-ready snippets.
+- /hero: Focused hero-section examples preserved from the original component catalogue.
 - /about: Company story, values, and migration timeline.
-- /pricing: Project engagement shapes and scope notes.
+- /pricing: Project scope shapes and discussion notes without fixed public pricing.
 - /cta: Conversion CTA patterns and examples.
 - /faqs: Questions about the migration, architecture, SEO, and contact flow.
 - /contact: Contact form and direct email/social links.

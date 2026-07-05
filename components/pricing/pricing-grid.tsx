@@ -11,9 +11,9 @@ export function PricingGrid() {
       <Container>
         <SectionHeading
           align="center"
-          description="Pricing is scoped around the project outcome because production frontend work depends on page count, content depth, integrations, and migration complexity."
-          eyebrow="Plans"
-          title="Choose the engagement shape that matches the build."
+          description="No fixed public prices are shown because production frontend work depends on page count, content depth, integrations, timeline, and migration complexity."
+          eyebrow="Engagement shapes"
+          title="Choose the starting point that matches the build."
         />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {pricingPlans.map((plan) => (

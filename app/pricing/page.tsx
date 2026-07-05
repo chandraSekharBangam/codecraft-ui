@@ -8,24 +8,24 @@ import { buildMetadata } from '@/lib/seo';
 import { breadcrumbSchema, offerCatalogSchema } from '@/lib/schema';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Pricing',
+  title: 'Project scope',
   description:
-    'Explore CodeCraft UI project options for focused landing pages, multi-page frontend systems, and complete Next.js migrations.',
+    'Explore CodeCraft UI engagement shapes for custom website development and contact-first project scoping without fixed public pricing.',
   path: '/pricing',
 });
 
 export default function PricingPage() {
   return (
     <>
-      <JsonLd data={[offerCatalogSchema(), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Pricing', path: '/pricing' }])]} />
+      <JsonLd data={[offerCatalogSchema(), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Project scope', path: '/pricing' }])]} />
       <PageHero
         description="Simple engagement shapes for frontend work that needs polish, maintainability, SEO, and production readiness."
-        eyebrow="Pricing"
+        eyebrow="Project scope"
         primaryHref="/contact"
-        primaryLabel="Request a quote"
+        primaryLabel="Discuss requirements"
         secondaryHref="/faqs"
         secondaryLabel="Read FAQs"
-        title="Project pricing based on real delivery scope."
+        title="Scope is shaped around real project requirements."
       />
       <PricingGrid />
       <ScopeNotes />

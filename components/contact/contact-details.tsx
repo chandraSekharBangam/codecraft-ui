@@ -29,7 +29,7 @@ export function ContactDetails() {
       <p className="text-sm font-semibold text-brand-amber">Contact information</p>
       <h2 className="mt-3 text-3xl font-semibold leading-tight">Share the current site and the outcome you want.</h2>
       <p className="mt-4 text-sm leading-7 text-ink-300">
-        Include the current repository or website, target pages, visual references, and any launch constraints that matter.
+        Include the current repository or website, project type, industry, required features, preferred stack, timeline, and any launch constraints that matter. Scope and implementation details are discussed after the requirements are reviewed.
       </p>
       <div className="mt-6 space-y-3">
         {contactLinks.map((link) => {
@@ -52,8 +52,8 @@ export function ContactDetails() {
           );
         })}
       </div>
-      <ButtonLink className="mt-6 w-full" href="/pricing" variant="secondary">
-        Review project options
+      <ButtonLink className="mt-6 w-full" href={`mailto:${siteConfig.email}`} variant="secondary">
+        Email requirements directly
       </ButtonLink>
     </aside>
   );

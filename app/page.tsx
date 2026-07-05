@@ -18,9 +18,9 @@ import { buildMetadata } from '@/lib/seo';
 import { organizationSchema, serviceSchema, websiteSchema } from '@/lib/schema';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Premium Next.js UI systems',
+  title: 'Custom websites and free Next.js UI components',
   description:
-    'CodeCraft UI redesigns React, TypeScript, and Tailwind CSS projects into production-ready Next.js applications with premium design, reusable components, and SEO foundations.',
+    'Hire CodeCraft UI for custom website development or browse free Next.js, TypeScript, and Tailwind CSS UI components with previews and copy-ready code.',
   path: '/',
 });
 

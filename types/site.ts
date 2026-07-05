@@ -59,3 +59,49 @@ export interface ComponentExample {
   tech: string[];
   code: string;
 }
+
+export type ComponentPreviewId =
+  | 'header-studio'
+  | 'header-product'
+  | 'hero-saas'
+  | 'hero-agency'
+  | 'about-learning-program'
+  | 'about-image-program'
+  | 'about-skills-program'
+  | 'features-grid'
+  | 'features-split'
+  | 'scope-options'
+  | 'scope-discussion'
+  | 'cta-consultation'
+  | 'cta-launch'
+  | 'cta-registration-card'
+  | 'cta-career-application'
+  | 'faq-simple'
+  | 'faq-learning-program'
+  | 'faq-mentor-program'
+  | 'contact-brief'
+  | 'timeline-product-evolution';
+
+export interface LibraryVariant {
+  id: string;
+  title: string;
+  description: string;
+  preview: ComponentPreviewId;
+  code: string;
+  stack: string[];
+}
+
+export interface LibraryCategory {
+  id: string;
+  title: string;
+  description: string;
+  variants: LibraryVariant[];
+}
+
+export interface HighlightedLibraryVariant extends LibraryVariant {
+  highlightedCode: string;
+}
+
+export interface HighlightedLibraryCategory extends Omit<LibraryCategory, 'variants'> {
+  variants: HighlightedLibraryVariant[];
+}

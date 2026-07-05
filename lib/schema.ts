@@ -1,4 +1,5 @@
 import { componentExamples, faqItems, pricingPlans, services } from '@/data/content';
+import { componentLibraryCategories } from '@/data/components-library';
 import { siteConfig } from '@/data/site';
 import { absoluteUrl } from '@/lib/utils';
 
@@ -66,6 +67,29 @@ export function collectionSchema(): JsonLdGraph {
   };
 }
 
+export function componentLibrarySchema(): JsonLdGraph {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Free Next.js UI component library',
+    description:
+      'Reusable Next.js, TypeScript, and Tailwind CSS UI sections with live previews, copy-ready code, and fullscreen preview support.',
+    url: absoluteUrl(siteConfig.url, '/components'),
+    hasPart: componentLibraryCategories.map((category) => ({
+      '@type': 'Collection',
+      name: category.title,
+      description: category.description,
+      hasPart: category.variants.map((variant) => ({
+        '@type': 'SoftwareSourceCode',
+        name: variant.title,
+        description: variant.description,
+        programmingLanguage: variant.stack,
+        codeSampleType: 'full',
+      })),
+    })),
+  };
+}
+
 export function faqSchema(): JsonLdGraph {
   return {
     '@context': 'https://schema.org',
@@ -91,10 +115,8 @@ export function offerCatalogSchema(): JsonLdGraph {
       '@type': 'Offer',
       name: plan.name,
       description: plan.description,
-      priceSpecification: {
-        '@type': 'PriceSpecification',
-        price: plan.price,
-      },
+      url: absoluteUrl(siteConfig.url, '/contact'),
+      category: plan.price,
     })),
   };
 }

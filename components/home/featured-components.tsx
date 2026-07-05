@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { ButtonLink } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { SectionHeading } from '@/components/ui/section-heading';
-import { componentExamples } from '@/data/content';
+import { componentLibraryCategories } from '@/data/components-library';
 
 export function FeaturedComponents() {
   return (
@@ -14,36 +14,33 @@ export function FeaturedComponents() {
           <div>
             <SectionHeading
               className="[&_h2]:text-white [&_p]:text-ink-300"
-              description="The original hero-section catalogue is preserved as a more professional component library page with live previews and code examples."
+              description="The free UI library now organizes reusable sections by category, variant, live preview, and copy-ready code."
               eyebrow="Migrated library"
-              title="Reusable hero sections with production copy."
+              title="Reusable sections with production copy."
             />
-            <ButtonLink className="mt-8" href="/hero" variant="secondary">
+            <ButtonLink className="mt-8" href="/components" variant="secondary">
               View component library
               <ArrowRight aria-hidden="true" className="size-4" />
             </ButtonLink>
           </div>
 
           <div className="grid gap-4">
-            {componentExamples.map((example) => (
+            {componentLibraryCategories.slice(0, 4).map((category) => (
               <Link
-                key={example.id}
+                key={category.id}
                 className="focus-ring rounded-lg border border-white/12 bg-white/[0.04] p-5 transition hover:border-brand-cyan hover:bg-white/[0.07]"
-                href="/hero"
+                href="/components#component-browser"
               >
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold text-white">{example.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-ink-300">{example.description}</p>
+                    <h3 className="text-lg font-semibold text-white">{category.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-ink-300">{category.description}</p>
                   </div>
                   <ArrowRight aria-hidden="true" className="size-5 shrink-0 text-brand-amber" />
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {example.tech.map((tech) => (
-                    <Badge key={tech} tone="ink">
-                      {tech}
-                    </Badge>
-                  ))}
+                  <Badge tone="ink">{category.variants.length} variants</Badge>
+                  <Badge tone="ink">Copy-ready code</Badge>
                 </div>
               </Link>
             ))}

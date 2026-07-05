@@ -88,3 +88,19 @@ select {
   outline-color: var(--color-brand-cyan);
   box-shadow: 0 0 0 4px rgb(32 200 243 / 20%);
 }
+
+.code-viewer .shiki {
+  min-width: 100%;
+  margin: 0;
+  overflow: visible;
+  background: transparent !important;
+  padding: 1rem;
+}
+
+.code-viewer code {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  font-family: var(--font-mono);
+  line-height: 1.75;
+}

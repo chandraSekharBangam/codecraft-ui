@@ -35,9 +35,9 @@ import type {
 
 export const metrics: Metric[] = [
   {
-    value: '40+',
-    label: 'Reusable sections',
-    detail: 'Designed as composable building blocks for marketing and product pages.',
+    value: '20',
+    label: 'Library variants',
+    detail: 'Organized across category-based building blocks, including the new reference section designs.',
   },
   {
     value: '100%',
@@ -51,8 +51,8 @@ export const metrics: Metric[] = [
   },
   {
     value: '0',
-    label: 'Figma lock-in',
-    detail: 'Production code lives directly in the application with no demo folder dependency.',
+    label: 'Demo lock-in',
+    detail: 'Production code lives directly in the application with no separate demo-folder dependency.',
   },
 ];
 
@@ -162,12 +162,27 @@ export const faqItems: FaqItem[] = [
   {
     question: 'What is CodeCraft UI?',
     answer:
-      'CodeCraft UI is a production-focused frontend system for premium React and Next.js interfaces, including reusable sections, polished marketing pages, and deployment-ready SEO foundations.',
+      'CodeCraft UI is both a custom website development service and a free UI reference library for production-focused React, Next.js, TypeScript, and Tailwind CSS interfaces.',
+  },
+  {
+    question: 'Can I hire CodeCraft UI to build a custom website?',
+    answer:
+      'Yes. You can send requirements for SaaS applications, business websites, corporate sites, startup pages, portfolios, landing pages, dashboards, ecommerce flows, and custom web applications through the contact page.',
+  },
+  {
+    question: 'Do you publish fixed prices?',
+    answer:
+      'No. Project scope, timeline, required features, preferred stack, and implementation details are discussed after the requirements are reviewed.',
+  },
+  {
+    question: 'What can I copy from the free component library?',
+    answer:
+      'The components page includes category-based UI sections with live previews, fullscreen viewing, syntax-highlighted code, and copy-ready Next.js, TypeScript, and Tailwind CSS snippets.',
   },
   {
     question: 'Does the project still include the original component ideas?',
     answer:
-      'Yes. The original hero-section catalogue is migrated into a polished component library page, while placeholder pages and Figma references are removed.',
+      'Yes. The original hero-section catalogue is preserved, and the broader components page now organizes reusable sections by category and variant.',
   },
   {
     question: 'Why use Next.js App Router instead of React Router?',
@@ -189,7 +204,7 @@ export const faqItems: FaqItem[] = [
 export const pricingPlans: PricingPlan[] = [
   {
     name: 'Starter',
-    price: 'Project-based',
+    price: 'Discuss scope',
     description: 'For a focused landing page or a small component refresh.',
     features: [
       'One production page',
@@ -200,7 +215,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: 'Growth',
-    price: 'Best fit',
+    price: 'Most requested',
     description: 'For multi-page SaaS, portfolio, or service websites that need a complete system.',
     featured: true,
     features: [
@@ -213,7 +228,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: 'Scale',
-    price: 'Custom',
+    price: 'Custom scope',
     description: 'For product teams migrating an existing frontend or standardizing a larger UI surface.',
     features: [
       'App Router migration',
@@ -245,7 +260,7 @@ export function SaasHero() {
           </p>
           <div className="mt-8 flex gap-3">
             <Link href="/contact">Start a project</Link>
-            <Link href="/hero">View components</Link>
+            <Link href="/components">View components</Link>
           </div>
         </div>
       </div>

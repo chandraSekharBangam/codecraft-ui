@@ -18,15 +18,15 @@ export function HomeHero() {
             CodeCraft UI
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-ink-300">
-            Premium React, TypeScript, and Tailwind CSS experiences redesigned for production with Next.js App Router,
-            SEO-ready metadata, reusable sections, and a brand system drawn from the CodeCraft logo.
+            Hire Chandra Sekhar Bangam for custom websites, SaaS interfaces, dashboards, and modern web applications,
+            or browse free Next.js, TypeScript, and Tailwind CSS sections you can copy into production.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/contact" size="lg" variant="secondary">
               Start a project
               <ArrowRight aria-hidden="true" className="size-4" />
             </ButtonLink>
-            <ButtonLink className="border-white/20 bg-white/5 text-white hover:bg-white/10" href="/hero" size="lg" variant="outline">
+            <ButtonLink className="border-white/20 bg-white/5 text-white hover:bg-white/10" href="/components" size="lg" variant="outline">
               Explore components
             </ButtonLink>
           </div>

@@ -3,7 +3,7 @@ import { siteConfig } from '@/data/site';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${siteConfig.name} - Premium Next.js UI systems`,
+    name: `${siteConfig.name} - Custom websites and free UI components`,
     short_name: siteConfig.shortName,
     description: siteConfig.description,
     start_url: '/',

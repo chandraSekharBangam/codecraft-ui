@@ -26,7 +26,7 @@ export default function TwitterImage() {
       >
         <div style={{ color: '#2567e6', fontSize: 32, fontWeight: 700 }}>{siteConfig.name}</div>
         <div style={{ marginTop: 20, maxWidth: 880, fontSize: 74, lineHeight: 1.03, fontWeight: 800 }}>
-          Design systems for production frontends.
+          Hire for websites. Copy free UI sections.
         </div>
         <div style={{ marginTop: 30, display: 'flex', gap: 16, color: '#05070d', fontSize: 26, fontWeight: 700 }}>
           <span>Next.js</span>
