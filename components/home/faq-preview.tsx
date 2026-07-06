@@ -6,7 +6,7 @@ import { faqItems } from '@/data/content';
 
 export function FaqPreview() {
   return (
-    <section className="bg-ink-100 py-16 sm:py-20">
+    <section className="bg-ink-50 py-16 sm:py-20">
       <Container className="grid gap-10 lg:grid-cols-[0.75fr_1fr] lg:items-start">
         <div>
           <SectionHeading

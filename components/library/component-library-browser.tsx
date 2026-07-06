@@ -108,7 +108,7 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
   }
 
   return (
-    <section className="py-16 sm:py-20" id="component-browser">
+    <section className="bg-white py-16 sm:py-20" id="component-browser">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr]">
           <div className="lg:sticky lg:top-28 lg:self-start">
@@ -128,22 +128,22 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
                     key={category.id}
                     aria-pressed={selected}
                     className={cn(
-                      'focus-ring rounded-lg border bg-white p-4 text-left transition hover:border-ink-950',
-                      selected ? 'border-ink-950 shadow-[var(--shadow-premium)]' : 'border-line',
+                      'focus-ring rounded-lg border bg-white p-4 text-left shadow-[0_10px_28px_rgb(5_7_13_/_5%)] transition hover:-translate-y-0.5 hover:border-brand-blue',
+                      selected ? 'border-ink-950 bg-ink-950 text-white shadow-[var(--shadow-premium)]' : 'border-line/80',
                     )}
                     type="button"
                     onClick={() => selectCategory(category)}
                   >
                     <span className="flex items-center gap-3">
-                      <span className={cn('flex size-10 items-center justify-center rounded-lg', selected ? 'bg-ink-950 text-brand-cyan' : 'bg-ink-100 text-ink-700')}>
+                      <span className={cn('flex size-10 items-center justify-center rounded-lg border', selected ? 'border-white/15 bg-white/10 text-brand-cyan' : 'border-line bg-ink-50 text-ink-700')}>
                         <Icon aria-hidden="true" className="size-5" />
                       </span>
                       <span>
-                        <span className="block text-sm font-semibold text-ink-950">{category.title}</span>
-                        <span className="mt-1 block text-xs font-medium text-ink-500">{category.variants.length} variants</span>
+                        <span className={cn('block text-sm font-semibold', selected ? 'text-white' : 'text-ink-950')}>{category.title}</span>
+                        <span className={cn('mt-1 block text-xs font-medium', selected ? 'text-ink-300' : 'text-ink-500')}>{category.variants.length} variants</span>
                       </span>
                     </span>
-                    <span className="mt-3 block text-sm leading-6 text-ink-600">{category.description}</span>
+                    <span className={cn('mt-3 block text-sm leading-6', selected ? 'text-ink-300' : 'text-ink-600')}>{category.description}</span>
                   </button>
                 );
               })}
@@ -151,8 +151,8 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
           </div>
 
           <div>
-            <div className="rounded-lg border border-line bg-white shadow-[var(--shadow-premium)]">
-              <div className="border-b border-line p-4 sm:p-5">
+            <div className="overflow-hidden rounded-lg border border-line/80 bg-white shadow-[var(--shadow-premium)]">
+              <div className="border-b border-line bg-ink-50 p-4 sm:p-5">
                 <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
                   <div>
                     <p className="text-sm font-semibold text-brand-blue">{activeCategory.title}</p>
@@ -174,8 +174,8 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
                       className={cn(
                         'focus-ring rounded-lg border px-4 py-3 text-left text-sm font-semibold transition',
                         variant.id === activeVariant.id
-                          ? 'border-ink-950 bg-ink-950 text-white'
-                          : 'border-line bg-ink-100 text-ink-700 hover:border-ink-950',
+                          ? 'border-ink-950 bg-ink-950 text-white shadow-[0_10px_24px_rgb(5_7_13_/_14%)]'
+                          : 'border-line bg-white text-ink-700 hover:border-brand-blue hover:bg-ink-50',
                       )}
                       type="button"
                       onClick={() => {
@@ -190,12 +190,12 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
               </div>
 
               <div className="flex flex-col gap-3 border-b border-line p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
-                <div className="inline-flex rounded-lg border border-line bg-ink-100 p-1" role="tablist" aria-label="Preview and code">
+                <div className="inline-flex rounded-lg border border-line bg-ink-50 p-1 shadow-[0_8px_24px_rgb(5_7_13_/_5%)]" role="tablist" aria-label="Preview and code">
                   <button
                     aria-selected={viewMode === 'preview'}
                     className={cn(
                       'focus-ring inline-flex h-9 items-center gap-2 rounded-md px-3 text-sm font-semibold transition',
-                      viewMode === 'preview' ? 'bg-ink-950 text-white' : 'text-ink-700',
+                      viewMode === 'preview' ? 'bg-ink-950 text-white shadow-[0_8px_20px_rgb(5_7_13_/_16%)]' : 'text-ink-700',
                     )}
                     role="tab"
                     type="button"
@@ -208,7 +208,7 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
                     aria-selected={viewMode === 'code'}
                     className={cn(
                       'focus-ring inline-flex h-9 items-center gap-2 rounded-md px-3 text-sm font-semibold transition',
-                      viewMode === 'code' ? 'bg-ink-950 text-white' : 'text-ink-700',
+                      viewMode === 'code' ? 'bg-ink-950 text-white shadow-[0_8px_20px_rgb(5_7_13_/_16%)]' : 'text-ink-700',
                     )}
                     role="tab"
                     type="button"
@@ -244,9 +244,9 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
       </Container>
 
       {fullscreen ? (
-        <div aria-label={`${activeVariant.title} fullscreen preview`} aria-modal="true" className="fixed inset-0 z-[100] bg-ink-950/80 p-3 backdrop-blur" role="dialog">
-          <div className="flex h-full flex-col overflow-hidden rounded-lg border border-line bg-white shadow-[0_28px_90px_rgb(0_0_0_/_38%)]">
-            <div className="flex items-center justify-between gap-3 border-b border-line p-3 sm:p-4">
+        <div aria-label={`${activeVariant.title} fullscreen preview`} aria-modal="true" className="fixed inset-0 z-[100] bg-ink-950/85 p-3 backdrop-blur" role="dialog">
+          <div className="flex h-full flex-col overflow-hidden rounded-lg border border-white/15 bg-white shadow-[0_28px_90px_rgb(0_0_0_/_38%)]">
+            <div className="flex items-center justify-between gap-3 border-b border-line bg-ink-50 p-3 sm:p-4">
               <div>
                 <p className="text-xs font-semibold uppercase text-ink-500">Fullscreen preview</p>
                 <h2 className="text-base font-semibold text-ink-950">{activeVariant.title}</h2>
@@ -256,7 +256,7 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
                 Exit
               </Button>
             </div>
-            <div className="min-h-0 flex-1 overflow-auto bg-ink-100 p-4 sm:p-6">
+            <div className="min-h-0 flex-1 overflow-auto bg-ink-50 p-4 sm:p-6">
               <div className="mx-auto min-w-[320px] max-w-6xl">
                 <VariantPreview variant={activeVariant} />
               </div>
@@ -270,7 +270,7 @@ export function ComponentLibraryBrowser({ categories }: ComponentLibraryBrowserP
 
 function PreviewSurface({ variant }: { variant: HighlightedLibraryVariant }) {
   return (
-    <div className="h-[430px] overflow-auto rounded-lg border border-line bg-ink-100 p-4 sm:p-6">
+    <div className="h-[430px] overflow-auto rounded-lg border border-line bg-ink-50 p-4 sm:p-6">
       <div className="mx-auto min-w-[320px] max-w-5xl">
         <VariantPreview variant={variant} />
       </div>
@@ -280,11 +280,11 @@ function PreviewSurface({ variant }: { variant: HighlightedLibraryVariant }) {
 
 function CodeSurface({ variant }: { variant: HighlightedLibraryVariant }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-ink-800 bg-[#0d1117]">
+    <div className="overflow-hidden rounded-lg border border-ink-800 bg-[#0d1117] shadow-[0_16px_44px_rgb(5_7_13_/_14%)]">
       <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-[#161b22] px-4 py-3">
         <div className="flex items-center gap-2">
-          <span className="size-3 rounded-full bg-brand-coral" />
-          <span className="size-3 rounded-full bg-brand-amber" />
+          <span className="size-3 rounded-full bg-brand-cyan" />
+          <span className="size-3 rounded-full bg-brand-blue" />
           <span className="size-3 rounded-full bg-brand-cyan" />
         </div>
         <p className="truncate text-xs font-semibold text-ink-300">{variant.title.replaceAll(' ', '')}.tsx</p>

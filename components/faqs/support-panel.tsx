@@ -5,9 +5,9 @@ import { siteConfig } from '@/data/site';
 
 export function SupportPanel() {
   return (
-    <section className="bg-ink-100 py-16 sm:py-20">
+    <section className="bg-ink-50 py-16 sm:py-20">
       <Container>
-        <div className="rounded-lg border border-line bg-white p-6 sm:p-8">
+        <div className="brand-border-gradient rounded-lg p-6 shadow-[var(--shadow-premium)] sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-sm font-semibold text-brand-blue">Still deciding?</p>

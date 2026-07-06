@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 
 export function PricingGrid() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="bg-white py-16 sm:py-20">
       <Container>
         <SectionHeading
           align="center"
@@ -20,27 +20,27 @@ export function PricingGrid() {
             <article
               key={plan.name}
               className={cn(
-                'rounded-lg border bg-white p-6',
-                plan.featured ? 'border-ink-950 shadow-[var(--shadow-premium)]' : 'border-line',
+                'rounded-lg border bg-white p-6 shadow-[0_14px_38px_rgb(5_7_13_/_7%)] transition duration-200 hover:-translate-y-1',
+                plan.featured ? 'border-ink-950 bg-ink-950 text-white shadow-[0_24px_70px_rgb(5_7_13_/_22%)]' : 'border-line/80',
               )}
             >
               {plan.featured ? (
-                <p className="mb-4 inline-flex rounded-full bg-brand-amber px-3 py-1 text-xs font-semibold text-ink-950">
+                <p className="mb-4 inline-flex rounded-full bg-brand-cyan px-3 py-1 text-xs font-semibold text-ink-950">
                   Recommended
                 </p>
               ) : null}
-              <h2 className="text-2xl font-semibold text-ink-950">{plan.name}</h2>
-              <p className="mt-3 text-3xl font-semibold text-ink-950">{plan.price}</p>
-              <p className="mt-4 text-sm leading-7 text-ink-600">{plan.description}</p>
+              <h2 className={cn('text-2xl font-semibold', plan.featured ? 'text-white' : 'text-ink-950')}>{plan.name}</h2>
+              <p className={cn('mt-3 text-3xl font-semibold', plan.featured ? 'text-brand-cyan' : 'text-ink-950')}>{plan.price}</p>
+              <p className={cn('mt-4 text-sm leading-7', plan.featured ? 'text-ink-300' : 'text-ink-600')}>{plan.description}</p>
               <ul className="mt-6 space-y-3">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-sm leading-6 text-ink-700">
-                    <CheckCircle2 aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-brand-blue" />
+                  <li key={feature} className={cn('flex gap-3 text-sm leading-6', plan.featured ? 'text-ink-200' : 'text-ink-700')}>
+                    <CheckCircle2 aria-hidden="true" className={cn('mt-0.5 size-4 shrink-0', plan.featured ? 'text-brand-cyan' : 'text-brand-blue')} />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <ButtonLink className="mt-8 w-full" href="/contact" variant={plan.featured ? 'primary' : 'outline'}>
+              <ButtonLink className={cn('mt-8 w-full', plan.featured && 'border-white bg-white !text-ink-950 hover:border-brand-cyan hover:bg-brand-cyan')} href="/contact" variant="outline">
                 Discuss this option
               </ButtonLink>
             </article>

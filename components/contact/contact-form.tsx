@@ -65,7 +65,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="rounded-lg border border-line bg-white p-6 shadow-[var(--shadow-premium)]" onSubmit={handleSubmit}>
+    <form className="rounded-lg border border-line/80 bg-ink-50 p-6 shadow-[var(--shadow-premium)]" onSubmit={handleSubmit}>
       <div className="mb-6">
         <p className="text-sm font-semibold text-brand-blue">Project requirements</p>
         <h2 className="mt-2 text-2xl font-semibold text-ink-950">Share enough detail to scope the work properly.</h2>
@@ -165,7 +165,7 @@ export function ContactForm() {
         Prepare project email
       </Button>
       {submitted ? (
-        <p className="mt-4 rounded-lg bg-ink-100 p-3 text-sm text-ink-700">
+        <p className="mt-4 rounded-lg border border-brand-cyan/30 bg-brand-cyan/10 p-3 text-sm text-ink-700">
           Your email app should now be open with the project details filled in.
         </p>
       ) : null}

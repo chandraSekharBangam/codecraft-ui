@@ -8,10 +8,11 @@ type ButtonSize = 'sm' | 'md' | 'lg';
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'border-transparent bg-ink-950 text-white hover:bg-ink-800 active:bg-ink-900 shadow-[0_10px_30px_rgb(5_7_13_/_18%)]',
+    'border-ink-950 bg-ink-950 text-white shadow-[0_16px_36px_rgb(5_7_13_/_18%)] hover:-translate-y-0.5 hover:bg-brand-blue hover:border-brand-blue active:translate-y-0 active:bg-ink-900',
   secondary:
-    'border-transparent bg-brand-cyan text-ink-950 hover:bg-brand-amber active:bg-brand-coral',
-  outline: 'border-line bg-white text-ink-900 hover:border-ink-950 hover:bg-ink-100 active:bg-ink-200',
+    'border-transparent bg-brand-cyan text-ink-950 shadow-[0_16px_34px_rgb(32_200_243_/_18%)] hover:-translate-y-0.5 hover:bg-brand-blue hover:text-white hover:shadow-[0_20px_42px_rgb(37_103_230_/_28%)] active:translate-y-0',
+  outline:
+    'border-line bg-white/90 text-ink-900 shadow-[0_8px_24px_rgb(5_7_13_/_6%)] hover:-translate-y-0.5 hover:border-brand-blue hover:bg-ink-50 active:translate-y-0 active:bg-ink-100',
   ghost: 'border-transparent bg-transparent text-ink-700 hover:bg-ink-100 active:bg-ink-200',
 };
 

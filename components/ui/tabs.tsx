@@ -19,14 +19,14 @@ export function Tabs({ tabs, label }: TabsProps) {
 
   return (
     <div>
-      <div aria-label={label} className="inline-flex rounded-lg border border-line bg-white p-1" role="tablist">
+      <div aria-label={label} className="inline-flex rounded-lg border border-line bg-ink-50 p-1 shadow-[0_8px_24px_rgb(5_7_13_/_6%)]" role="tablist">
         {tabs.map((tab, index) => (
           <button
             key={tab.label}
             aria-selected={activeIndex === index}
             className={cn(
               'focus-ring h-9 rounded-md px-4 text-sm font-semibold text-ink-600 transition',
-              activeIndex === index && 'bg-ink-950 text-white',
+              activeIndex === index && 'bg-ink-950 text-white shadow-[0_8px_20px_rgb(5_7_13_/_16%)]',
             )}
             role="tab"
             type="button"

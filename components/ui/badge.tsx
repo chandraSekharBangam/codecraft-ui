@@ -7,10 +7,10 @@ interface BadgeProps extends PropsWithChildren {
 }
 
 const tones: Record<NonNullable<BadgeProps['tone']>, string> = {
-  cyan: 'border-brand-cyan/30 bg-brand-cyan/12 text-ink-950',
-  amber: 'border-brand-amber/40 bg-brand-amber/16 text-ink-950',
-  coral: 'border-brand-coral/30 bg-brand-coral/12 text-ink-950',
-  ink: 'border-ink-800 bg-ink-950 text-white',
+  cyan: 'border-brand-cyan/35 bg-brand-cyan/10 text-ink-950 shadow-[0_8px_24px_rgb(32_200_243_/_10%)]',
+  amber: 'border-brand-amber/45 bg-brand-amber/18 text-ink-950 shadow-[0_8px_24px_rgb(255_201_70_/_12%)]',
+  coral: 'border-brand-coral/35 bg-brand-coral/12 text-ink-950 shadow-[0_8px_24px_rgb(255_107_74_/_10%)]',
+  ink: 'border-white/15 bg-white/10 text-white shadow-[inset_0_1px_0_rgb(255_255_255_/_10%)]',
 };
 
 export function Badge({ children, className, tone = 'cyan' }: BadgeProps) {

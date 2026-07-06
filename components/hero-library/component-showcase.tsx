@@ -33,7 +33,7 @@ export function ComponentShowcase() {
   }
 
   return (
-    <section className="py-16 sm:py-20" id="examples">
+    <section className="bg-white py-16 sm:py-20" id="examples">
       <Container>
         <SectionHeading
           description="Each example is intentionally compact here, but the structure is ready to expand into a deeper component catalogue."
@@ -47,25 +47,25 @@ export function ComponentShowcase() {
               <button
                 key={example.id}
                 className={cn(
-                  'focus-ring w-full rounded-lg border border-line bg-white p-4 text-left transition hover:border-ink-950',
-                  activeId === example.id && 'border-ink-950 shadow-[var(--shadow-premium)]',
+                  'focus-ring w-full rounded-lg border border-line/80 bg-white p-4 text-left shadow-[0_10px_28px_rgb(5_7_13_/_5%)] transition hover:-translate-y-0.5 hover:border-brand-blue',
+                  activeId === example.id && 'border-ink-950 bg-ink-950 shadow-[var(--shadow-premium)]',
                 )}
                 type="button"
                 onClick={() => setActiveId(example.id)}
               >
-                <h2 className="text-base font-semibold text-ink-950">{example.title}</h2>
-                <p className="mt-2 text-sm leading-6 text-ink-600">{example.description}</p>
+                <h2 className={cn('text-base font-semibold', activeId === example.id ? 'text-white' : 'text-ink-950')}>{example.title}</h2>
+                <p className={cn('mt-2 text-sm leading-6', activeId === example.id ? 'text-ink-300' : 'text-ink-600')}>{example.description}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {example.tech.map((tech) => (
-                    <Badge key={tech}>{tech}</Badge>
+                    <Badge key={tech} tone={activeId === example.id ? 'ink' : 'cyan'}>{tech}</Badge>
                   ))}
                 </div>
               </button>
             ))}
           </div>
 
-          <div className="overflow-hidden rounded-lg border border-line bg-white">
-            <div className="flex flex-col gap-3 border-b border-line p-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="overflow-hidden rounded-lg border border-line/80 bg-white shadow-[var(--shadow-premium)]">
+            <div className="flex flex-col gap-3 border-b border-line bg-ink-50 p-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 className="font-semibold text-ink-950">{activeExample.title}</h2>
                 <p className="text-sm text-ink-600">{viewMode === 'preview' ? 'Live preview' : 'Code snippet'}</p>

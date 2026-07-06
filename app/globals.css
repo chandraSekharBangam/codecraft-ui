@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 @theme {
+  --color-ink-50: #f8fbff;
   --color-ink-950: #05070d;
   --color-ink-900: #0a1020;
   --color-ink-800: #111827;
   --color-ink-700: #1f2937;
   --color-ink-600: #374151;
   --color-ink-500: #5b6472;
+  --color-ink-400: #8b96a6;
   --color-ink-300: #c7cfda;
   --color-ink-200: #e3e8ef;
   --color-ink-100: #f3f6fa;
+  --color-ink-75: #f7f9fc;
   --color-paper: #ffffff;
+  --color-panel: #fbfdff;
   --color-brand-cyan: #20c8f3;
   --color-brand-blue: #2567e6;
   --color-brand-violet: #7a3fe2;
@@ -19,7 +23,8 @@
   --color-line: #d8e0ea;
   --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
-  --shadow-premium: 0 18px 55px rgb(5 7 13 / 10%);
+  --shadow-premium: 0 24px 70px rgb(5 7 13 / 12%);
+  --shadow-lifted: 0 18px 44px rgb(37 103 230 / 12%);
 }
 
 :root {
@@ -47,7 +52,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   background:
-    linear-gradient(180deg, rgb(243 246 250 / 78%) 0, rgb(255 255 255 / 0%) 360px),
+    linear-gradient(180deg, rgb(248 251 255 / 96%) 0, rgb(255 255 255 / 0%) 420px),
+    linear-gradient(90deg, rgb(37 103 230 / 4%) 0, rgb(32 200 243 / 3%) 100%),
     var(--color-paper);
 }
 
@@ -64,16 +70,11 @@ select {
 }
 
 ::selection {
-  background: rgb(32 200 243 / 24%);
+  background: rgb(32 200 243 / 28%);
   color: var(--color-ink-950);
 }
 
-.bg-grid {
-  background-image:
-    linear-gradient(rgb(216 224 234 / 48%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(216 224 234 / 48%) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
+
 
 .text-balance {
   text-wrap: balance;
@@ -88,6 +89,22 @@ select {
   outline-color: var(--color-brand-cyan);
   box-shadow: 0 0 0 4px rgb(32 200 243 / 20%);
 }
+
+.brand-text-gradient {
+  background: linear-gradient(90deg, var(--color-brand-blue), var(--color-brand-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-border-gradient {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-paper), var(--color-paper)) padding-box,
+    linear-gradient(135deg, rgb(37 103 230 / 60%), rgb(32 200 243 / 50%)) border-box;
+}
+
+
 
 .code-viewer .shiki {
   min-width: 100%;
