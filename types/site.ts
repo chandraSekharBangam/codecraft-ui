@@ -80,7 +80,19 @@ export type ComponentPreviewId =
   | 'faq-learning-program'
   | 'faq-mentor-program'
   | 'contact-brief'
-  | 'timeline-product-evolution';
+  | 'timeline-product-evolution'
+  | 'button-animated'
+  | 'button-ghost'
+  | 'button-business'
+  | 'form-login'
+  | 'form-register'
+  | 'form-contact'
+  | 'card-pricing'
+  | 'card-profile'
+  | 'card-hover'
+  | 'popup-promo'
+  | 'popup-dialog'
+  | 'landing-saas';
 
 export interface LibraryVariant {
   id: string;

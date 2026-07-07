@@ -9,30 +9,50 @@ interface AnimatedPatternProps {
 }
 
 export function AnimatedPattern({ className, theme = 'dark' }: AnimatedPatternProps) {
-  // A seamless 3D isometric pyramid / low-poly mesh pattern built with solid SVG polygons.
-  // This uses NO grids, NO dots, NO gradients, NO glows, and NO lines.
-  const svgData = theme === 'dark' 
-    ? "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='rgba(255,255,255,0.015)' points='0,0 120,0 60,60'/%3E%3Cpolygon fill='rgba(255,255,255,0.03)' points='120,0 120,120 60,60'/%3E%3Cpolygon fill='rgba(255,255,255,0.02)' points='120,120 0,120 60,60'/%3E%3Cpolygon fill='rgba(255,255,255,0.035)' points='0,120 0,0 60,60'/%3E%3C/svg%3E"
-    : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='rgba(32,200,243,0.02)' points='0,0 120,0 60,60'/%3E%3Cpolygon fill='rgba(32,200,243,0.04)' points='120,0 120,120 60,60'/%3E%3Cpolygon fill='rgba(32,200,243,0.03)' points='120,120 0,120 60,60'/%3E%3Cpolygon fill='rgba(32,200,243,0.05)' points='0,120 0,0 60,60'/%3E%3C/svg%3E";
+  const color = theme === 'dark' ? 'rgba(255, 255, 255, 0.07)' : 'rgba(0, 0, 0, 0.07)';
+  const dotColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.25)' : 'rgba(0, 0, 0, 0.25)';
 
   return (
-    <div className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
-      <motion.div
-        animate={{
-          x: [0, -120],
-          y: [0, -120],
-        }}
-        className="absolute -inset-[240px]"
+    <div 
+      className={cn(
+        "pointer-events-none absolute inset-0 overflow-hidden flex items-center justify-center", 
+        className
+      )}
+      style={{ perspective: '1000px' }}
+    >
+      <div 
+        className="absolute inset-0"
         style={{
-          backgroundImage: `url("${svgData}")`,
-          backgroundSize: '120px 120px',
+          maskImage: 'radial-gradient(ellipse at center, black 10%, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 10%, transparent 75%)',
         }}
-        transition={{
-          repeat: Infinity,
-          ease: 'linear',
-          duration: 5,
-        }}
-      />
+      >
+        <div 
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ transform: 'rotateX(60deg)', transformStyle: 'preserve-3d' }}
+        >
+          <motion.div
+            animate={{
+              y: [0, 100],
+            }}
+            transition={{
+              repeat: Infinity,
+              ease: 'linear',
+              duration: 4, // Extremely smooth and relaxed pace
+            }}
+            className="absolute w-[300vw] h-[300vh]"
+            style={{
+              backgroundImage: `
+                radial-gradient(circle at 0.5px 0.5px, ${dotColor} 2px, transparent 2.5px),
+                linear-gradient(to right, ${color} 1px, transparent 1px),
+                linear-gradient(to bottom, ${color} 1px, transparent 1px)
+              `,
+              backgroundSize: '100px 100px',
+              willChange: 'transform', // Forces GPU acceleration to prevent lag
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 }

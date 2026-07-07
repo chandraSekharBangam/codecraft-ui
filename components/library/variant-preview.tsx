@@ -77,6 +77,18 @@ export function VariantPreview({ variant }: VariantPreviewProps) {
       return <ProjectBriefPreview />;
     case 'timeline-product-evolution':
       return <ProductEvolutionTimelinePreview />;
+    case 'button-animated': return <AnimatedButtonPreview />;
+    case 'button-ghost': return <GhostButtonPreview />;
+    case 'button-business': return <BusinessButtonPreview />;
+    case 'form-login': return <LoginFormPreview />;
+    case 'form-register': return <RegisterFormPreview />;
+    case 'form-contact': return <ContactFormPreview />;
+    case 'card-pricing': return <PricingCardPreview />;
+    case 'card-profile': return <ProfileCardPreview />;
+    case 'card-hover': return <HoverCardPreview />;
+    case 'popup-promo': return <PromoPopupPreview />;
+    case 'popup-dialog': return <DialogPopupPreview />;
+    case 'landing-saas': return <SaasLandingPreview />;
     default:
       return null;
   }
@@ -812,5 +824,278 @@ function ProductEvolutionTimelinePreview() {
         </div>
       </div>
     </section>
+  );
+}
+
+function AnimatedButtonPreview() {
+  return (
+    <div className="flex items-center justify-center py-20">
+      <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-4 px-8 font-medium text-white bg-slate-950 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+        <span className="absolute inset-0 rounded-full border-2 border-white/20 transition-all duration-300 group-hover:border-white/40"></span>
+        <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 opacity-0 transition-opacity duration-300 group-hover:opacity-20 blur-lg"></span>
+        <span className="relative flex items-center gap-2">
+          Get Started <Sparkles className="h-4 w-4" />
+        </span>
+      </button>
+    </div>
+  );
+}
+
+function GhostButtonPreview() {
+  return (
+    <div className="flex items-center justify-center py-20 bg-slate-950">
+      <button className="relative inline-flex items-center justify-center overflow-hidden rounded-lg border border-white/20 px-8 py-3 font-medium text-white transition-all hover:bg-white hover:text-slate-950">
+        <span className="relative">View Documentation</span>
+      </button>
+    </div>
+  );
+}
+
+function BusinessButtonPreview() {
+  return (
+    <div className="flex items-center justify-center py-20">
+      <button className="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+        Submit Request
+      </button>
+    </div>
+  );
+}
+
+function LoginFormPreview() {
+  return (
+    <div className="flex items-center justify-center py-10">
+      <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-white p-8 shadow-xl">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-slate-900">Welcome back</h2>
+          <p className="mt-2 text-sm text-slate-600">Enter your credentials to access your account.</p>
+        </div>
+        <form className="mt-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <div>
+            <label className="mb-2 block text-sm font-medium text-slate-900">Email Address</label>
+            <input type="email" placeholder="you@company.com" className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+          </div>
+          <div>
+            <div className="mb-2 flex items-center justify-between">
+              <label className="block text-sm font-medium text-slate-900">Password</label>
+              <a href="#preview" className="text-sm font-medium text-blue-600 hover:underline">Forgot password?</a>
+            </div>
+            <input type="password" placeholder="••••••••" className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+          </div>
+          <button className="mt-6 w-full rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-slate-800">
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function RegisterFormPreview() {
+  return (
+    <div className="flex items-center justify-center py-10 px-4">
+      <div className="grid w-full max-w-4xl grid-cols-1 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl md:grid-cols-2">
+        <div className="bg-slate-900 p-8 text-white flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-2 font-bold"><Zap className="text-cyan-400" /> SystemUI</div>
+            <h3 className="mt-12 text-2xl font-semibold leading-tight">Start building modern interfaces today.</h3>
+            <p className="mt-4 text-slate-400">Join thousands of developers shipping faster.</p>
+          </div>
+          <div className="mt-12 text-sm text-slate-500">&copy; 2024 SystemUI Inc.</div>
+        </div>
+        <div className="p-8 lg:p-12">
+          <h2 className="text-2xl font-bold text-slate-900">Create an account</h2>
+          <form className="mt-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-900">First name</label>
+                <input type="text" className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-900">Last name</label>
+                <input type="text" className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+              </div>
+            </div>
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-900">Email Address</label>
+              <input type="email" className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+            </div>
+            <div>
+              <label className="mb-2 block text-sm font-medium text-slate-900">Password</label>
+              <input type="password" className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20" />
+            </div>
+            <button className="mt-6 w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-md transition-colors hover:bg-blue-500">
+              Create account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ContactFormPreview() {
+  return (
+    <div className="mx-auto max-w-xl py-10 px-4">
+      <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+        <h2 className="text-2xl font-bold text-slate-900">Get in touch</h2>
+        <p className="mt-2 text-sm text-slate-600">Our friendly team would love to hear from you.</p>
+        <form className="mt-8 space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-slate-900">First name</label>
+              <input type="text" className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+            </div>
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-slate-900">Last name</label>
+              <input type="text" className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+            </div>
+          </div>
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-slate-900">Email</label>
+            <input type="email" className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+          </div>
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-slate-900">Message</label>
+            <textarea rows={4} className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"></textarea>
+          </div>
+          <button className="w-full rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-slate-800">Send message</button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function PricingCardPreview() {
+  return (
+    <div className="flex items-center justify-center py-10">
+      <div className="relative w-full max-w-sm rounded-2xl border-2 border-blue-600 bg-white p-8 shadow-2xl">
+        <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold tracking-wide text-white uppercase">Most Popular</span>
+        <h3 className="text-xl font-bold text-slate-900">Pro Plan</h3>
+        <p className="mt-2 text-sm text-slate-500">Perfect for growing businesses and teams.</p>
+        <div className="mt-6 flex items-baseline text-5xl font-extrabold text-slate-900">
+          $49
+          <span className="ml-1 text-xl font-medium text-slate-500">/mo</span>
+        </div>
+        <ul className="mt-8 space-y-4 text-sm text-slate-600">
+          {['Up to 10 users', 'Unlimited projects', 'Advanced analytics', '24/7 priority support'].map(f => (
+            <li key={f} className="flex gap-3"><CheckCircle2 className="h-5 w-5 text-blue-600 shrink-0" /> {f}</li>
+          ))}
+        </ul>
+        <button className="mt-8 w-full rounded-lg bg-blue-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-500">Get Started</button>
+      </div>
+    </div>
+  );
+}
+
+function ProfileCardPreview() {
+  return (
+    <div className="flex items-center justify-center py-10">
+      <div className="group w-full max-w-xs overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl">
+        <div className="h-32 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+        <div className="px-6 pb-6 text-center">
+          <div className="relative mx-auto -mt-12 h-24 w-24 overflow-hidden rounded-full border-4 border-white bg-slate-200">
+            <Image src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" width={96} height={96} alt="Profile" className="h-full w-full object-cover" />
+          </div>
+          <h3 className="mt-4 text-xl font-bold text-slate-900">Alex Morgan</h3>
+          <p className="text-sm font-medium text-slate-500">Senior Designer</p>
+          <div className="mt-4 flex justify-center gap-3">
+            <button className="rounded-full bg-slate-100 p-2 text-slate-600 hover:bg-blue-50 hover:text-blue-600"><Globe className="h-4 w-4" /></button>
+            <button className="rounded-full bg-slate-100 p-2 text-slate-600 hover:bg-blue-50 hover:text-blue-600"><Users className="h-4 w-4" /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HoverCardPreview() {
+  return (
+    <div className="flex items-center justify-center py-10">
+      <div className="group relative w-full max-w-sm overflow-hidden rounded-2xl bg-slate-900 text-white shadow-2xl">
+        <Image src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=600&auto=format&fit=crop" width={600} height={400} alt="Background" className="h-80 w-full object-cover opacity-50 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-20" />
+        <div className="absolute inset-0 flex flex-col justify-end p-8">
+          <div className="translate-y-8 transition-transform duration-300 group-hover:translate-y-0">
+            <h3 className="text-2xl font-bold">Creative Workshop</h3>
+            <p className="mt-2 text-sm text-slate-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">Join our immersive design sprint and master new techniques.</p>
+            <button className="mt-6 flex items-center gap-2 text-sm font-semibold text-cyan-400 opacity-0 transition-opacity duration-300 delay-100 group-hover:opacity-100">Explore <ChevronRight className="h-4 w-4" /></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PromoPopupPreview() {
+  return (
+    <div className="flex items-center justify-center py-10 bg-slate-100 h-96 relative">
+      <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"></div>
+      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl animate-in zoom-in-95 duration-300">
+        <div className="bg-gradient-to-r from-violet-600 to-indigo-600 p-8 text-center text-white">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
+            <Sparkles className="h-8 w-8" />
+          </div>
+          <h2 className="mt-4 text-2xl font-bold">Special Offer!</h2>
+          <p className="mt-2 text-indigo-100">Get 50% off your first 3 months on any Pro plan.</p>
+        </div>
+        <div className="p-6 text-center">
+          <p className="text-sm font-medium text-slate-500">Use code <span className="rounded bg-slate-100 px-2 py-1 font-bold text-slate-900">PRO50</span> at checkout.</p>
+          <div className="mt-6 flex gap-3">
+            <button className="w-full rounded-lg bg-slate-100 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-200">No thanks</button>
+            <button className="w-full rounded-lg bg-indigo-600 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500">Claim Offer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DialogPopupPreview() {
+  return (
+    <div className="flex items-center justify-center py-10 bg-slate-100 h-96 relative">
+      <div className="absolute inset-0 bg-slate-900/20"></div>
+      <div className="relative z-10 w-full max-w-sm rounded-xl bg-white p-6 shadow-xl">
+        <h3 className="text-lg font-bold text-slate-900">Delete Project?</h3>
+        <p className="mt-2 text-sm text-slate-600">Are you sure you want to delete this project? This action cannot be undone and all data will be permanently lost.</p>
+        <div className="mt-6 flex justify-end gap-3">
+          <button className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">Cancel</button>
+          <button className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-500">Delete</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SaasLandingPreview() {
+  return (
+    <div className="w-full bg-slate-50 pb-20">
+      {/* Hero */}
+      <section className="bg-slate-950 px-5 py-24 text-center text-white">
+        <h1 className="mx-auto max-w-4xl text-5xl font-bold tracking-tight md:text-6xl">The new standard for modern teams.</h1>
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-400">Build, deploy, and scale your applications faster than ever with our comprehensive toolset.</p>
+        <div className="mt-10 flex justify-center gap-4">
+          <button className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-slate-200">Start building free</button>
+          <button className="rounded-lg border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10">Read docs</button>
+        </div>
+      </section>
+      {/* Feature */}
+      <section className="mx-auto max-w-5xl px-5 py-20">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-slate-900">Everything you need</h2>
+        </div>
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          {[
+            { t: 'Global Edge', d: 'Deploy globally in milliseconds with our edge network.' },
+            { t: 'Serverless Functions', d: 'Run code without thinking about servers or capacity.' },
+            { t: 'Built-in Analytics', d: 'Understand your users with privacy-first insights.' }
+          ].map(f => (
+            <div key={f.t} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="h-10 w-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center"><Zap className="h-5 w-5" /></div>
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">{f.t}</h3>
+              <p className="mt-2 text-sm text-slate-600">{f.d}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
